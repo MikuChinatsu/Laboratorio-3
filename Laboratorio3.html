@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="Laboratorio3.css">
+  <script src="Laboratorio3.js"></script>
+  <title>Formulario de Alta telefónica</title>
+</head>
+
+<body>
+  <h1>Formulario Información Alta Telefónica</h1>
+  <form action="" method="get">
+    <h2>Datos Personales</h2>
+    <fieldset>
+      <div class="row_input">
+        <label for="fname">Nombre:</label>
+        <input type="text" max-length="30" id="fname" name="fname" />
+      </div>
+
+      <div class="row_input">
+        <label for="lname">Apellidos:</label>
+        <input type="text" max-length="60" id="lname" name="lname" />
+      </div>
+
+      <div class="row_input">
+        <label for="address">Dirección:</label>
+        <input type="text" max-length="60" id="address" name="address" />
+      </div>
+
+      <div class="row_input">
+        <label for="postal_code">Código Postal:</label>
+        <input type="text" max-length="5" pattern="[0-9]+" id="postal_code" name="postal_code" />
+      </div>
+
+      <div class="row_input">
+        <label for="city">Localidad:</label>
+        <input type="text" id="city" name="city" />
+      </div>
+    </fieldset>
+
+    </br>
+
+    <h2>Tipos de contratación</h2>
+    <fieldset>
+      <div>
+        <input type="radio" id="new" name="hiring_type" checked="checked" />
+        <label for="new">Nueva contratación</label>
+        <input type="radio" id="portability" name="hiring_type" />
+        <label for="portability">Portabilidad</label>
+        <input type="radio" id="contract_change" name="hiring_type" />
+        <label for="contract_change">Cambio de contrato</label>
+      </div>
+
+      </br>
+      <br>
+      <div class="row_input">
+        <label for="current_company">Elija compañía actual:</label>
+        <select id="current_company" name="current_company">
+          <option value="Movistar">Movistar</option>
+          <option value="Orange">Orange</option>
+          <option value="Vodafone">Vodafone</option>
+          <option value="Yoigo">Yoigo</option>
+          <option value="none">No Tengo Ninguna Compañía</option>
+        </select>
+
+        <label for="new_company">En caso de portabilidad, elija la nueva compañía:</label>
+        <select id="new_company" name="new_company">
+          <option value="Movistar">Movistar</option>
+          <option value="Orange">Orange</option>
+          <option value="Vodafone">Vodafone</option>
+          <option value="Yoigo">Yoigo</option>
+        </select>
+      </div>
+    </fieldset>
+
+    </br>
+
+    <h2>Datos bancarios</h2>
+    <fieldset class="bank_data">
+      <div class="row_input">
+        <label for="country">País:</label>
+        <input type="text" id="country" name="country" disabled value="ES" />
+        <span>(sólo válido ES)</span>
+      </div>
+
+      <div class="row_input">
+        <label for="iban">Control IBAN:</label>
+        <input type="number" max="99" id="iban" name="iban" />
+        <span>(dos dígitos)</span>
+      </div>
+
+      <div class="row_input">
+        <label for="entity">Entidad:</label>
+        <input type="number" max="9999" id="entity" name="entity" />
+        <span>(cuatro dígitos)</span>
+      </div>
+
+      <div class="row_input">
+        <label for="branch">Sucursal:</label>
+        <input type="number" max="9999" id="branch" name="branch" />
+        <span>(cuatro dígitos)</span>
+      </div>
+
+      <div class="row_input">
+        <label for="dc">DC:</label>
+        <input type="number" max="99" id="dc" name="dc" />
+        <span>(dos dígitos)</span>
+      </div>
+
+      <div class="row_input">
+        <label for="account">Cuenta:</label>
+        <input type="number" max="9999999999" id="account" name="account" />
+        <span>(diez dígitos)</span>
+      </div>
+    </fieldset>
+
+    </br>
+
+    <h2>Datos estadísticos: ¿Cómo nos conoció?</h2>
+    <fieldset class="statistics_data">
+      <div class="row_input">
+        <input type="checkbox" id="tv" name="tv" />
+        <label for="tv">A través de la tv</label>
+      </div>
+
+      <div class="row_input">
+        <input type="checkbox" id="radio" name="radio" />
+        <label for="radio">A través de la radio</label>
+      </div>
+
+      <div class="row_input">
+        <input type="checkbox" id="internet" name="internet" />
+        <label for="internet">A través de internet</label>
+      </div>
+
+      <div class="row_input">
+        <input type="checkbox" id="other" name="other" />
+        <label for="other">Otros</label>
+      </div>
+
+      </br>
+
+      <div class="range_input">
+        <input type="range" min="0" max="5" id="score" name="score" />
+        <label for="score">Valoración [1-5]</label>
+      </div>
+
+      </br>
+
+      <div class="row_input">
+        <label for="date">Fecha de la encuesta:</label>
+        <input type="date" id="date" name="date" required pattern="\d{2}/\d{2}/\d{4}" value="2019-01-01" />
+      </div>
+    </fieldset>
+
+    <input type="submit" value="Enviar Datos">
+    <input type="reset" value="Borrar Datos">
+
+    <section class="actionable_buttons">
+      <button onclick="showScore()">Mostrar Valoración</button>
+      <button onclick="showAccount()">Mostrar Cuenta</button>
+      <button onclick="showCurrentDay()">Mostrar Día Semana</button>
+    </section>
+  </form>
+
+</body>
+
+</html>
